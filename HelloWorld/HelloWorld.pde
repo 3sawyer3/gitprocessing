@@ -9,4 +9,5 @@ void draw() {
   textSize(36);
   float textW=textWidth(message);
   text(message, mouseX-textW/2, mouseY);
+  triangle(30, 75, 58, 20, 86, 75);
 }
