@@ -1,9 +1,9 @@
 void setup() {
-  size(600, 400);  
-  background(255);
+  size(600, 400);
 }
 
-void draw() {
+void draw() {  
+  background(255);
   fill(0, 0, 255);
   stroke(255, 0, 0);
   strokeWeight(10);
