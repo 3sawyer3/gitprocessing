@@ -1,3 +1,4 @@
+ArrayList<Ball> bouncingBalls ;
 void setup() {
   size(640, 480);
   bouncingBalls=new ArrayList<Ball>();
@@ -5,11 +6,11 @@ void setup() {
   bouncingBalls.add(new Ball(200, 200, 1, -1, 25));
 }
 
-void draw(){
+void draw() {
   background(255);
   for (Ball ball:bouncingBalls) {
     ball.draw();
     ball.move();
-  
+  }
 }
 

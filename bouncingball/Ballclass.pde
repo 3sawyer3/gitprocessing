@@ -5,7 +5,7 @@ class Ball {
     x=x_;
     y=y_;
     vx=vx_;
-    y=vy_;
+    vy=vy_;
     radius=radius_;
   }
 
@@ -15,7 +15,7 @@ class Ball {
 
   void move() {
     x=x+vx;
-    y=y+by;
+    y=y+vy;
     if (y>height-radius) {
       //bounce off bottom of screen
       vy=-abs(vy);
@@ -23,13 +23,12 @@ class Ball {
     if (x>width-radius) {
       vx=-abs(vx);
     }
-    if (y<0+radius) {
-      vy+abs(vy);
+    if (y<radius) {
+      vy=abs(vy);
     }
-    if (x<0=radius) {
+    if (x<radius) {
       vx=abs(vx);
     }
   }
 }
-
 
