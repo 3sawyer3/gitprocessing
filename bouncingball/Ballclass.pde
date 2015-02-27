@@ -20,10 +20,12 @@ class Ball {
   void move() {
     x=x+vx;
     y=y+vy;
-    vy=vy+gravity;
-    if (y>height-radius) {
+    if (y+vy>height-radius) {
       //bounce off bottom of screen
       vy=-abs(vy);
+    } 
+    else {
+      vy=vy+gravity;
     }
     if (x>width-radius) {
       vx=-abs(vx);
