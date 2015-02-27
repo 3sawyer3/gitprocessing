@@ -1,21 +1,26 @@
 class Ball {
   float x, y, vx, vy, radius;
+  int colr;
+  float gravity=0.2;
 
-  Ball (float x_, float y_, float vx_, float vy_, float radius_) {
+  Ball (float x_, float y_, float vx_, float vy_, float radius_, int colr_) {
     x=x_;
     y=y_;
     vx=vx_;
     vy=vy_;
     radius=radius_;
+    colr=colr_;
   }
 
   void draw() {
+    fill (colr);
     ellipse(x, y, radius*2, radius*2);
   }
 
   void move() {
     x=x+vx;
     y=y+vy;
+    vy=vy+gravity;
     if (y>height-radius) {
       //bounce off bottom of screen
       vy=-abs(vy);
