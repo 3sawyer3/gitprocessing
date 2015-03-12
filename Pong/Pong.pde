@@ -1,6 +1,6 @@
 ArrayList<Ball> bouncingBalls ;
 void setup() {
-  size(700, 550);
+  size(500, 600);
   bouncingBalls=new ArrayList<Ball>();
   bouncingBalls.add(new Ball(100, 200, 2, 2, 25, color (0, 0, 1)));
 }

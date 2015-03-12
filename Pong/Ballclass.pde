@@ -1,7 +1,7 @@
 class Ball {
   float x, y, vx, vy, radius;
   int colr;
-  float gravity=0.01;
+  float gravity=0.05;
 
   Ball (float x_, float y_, float vx_, float vy_, float radius_, int colr_) {
     x=x_;

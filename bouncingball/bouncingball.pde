@@ -15,13 +15,12 @@ void draw() {
     ball.move();
     int colorUnderMouse = get(mouseX, mouseY);
     boolean touchingBall = (ball.colr == colorUnderMouse);
-//    boolean touchingBall2 = (ballcolor2 == colorUnderMouse);
+    //    boolean touchingBall2 = (ballcolor2 == colorUnderMouse);
     if (mousePressed && (mouseButton == LEFT) && touchingBall) {
       ball.touch1();
-      }
-      else {
-        ball.notouch();
-      }
+    } else {
+      ball.notouch();
     }
   }
+}
 
