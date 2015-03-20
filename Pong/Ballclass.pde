@@ -12,7 +12,7 @@ class Ball {
     colr=colr_;
   }
 
-  void draw() {
+  void draw() {bounceIfTouchingPaddle();
     fill (colr);
     ellipse(x, y, radius*2, radius*2);
   }
@@ -32,6 +32,12 @@ class Ball {
     }
     if (x<radius) {
       vx=abs(vx);
+    }
+  }
+
+  void bounceIfTouchingPaddle() {
+    if (dist (x, y, paddle.getX(), paddle.getY())<40) {
+      vy=-abs(vy);
     }
   }
 }
