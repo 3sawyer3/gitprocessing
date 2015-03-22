@@ -1,7 +1,11 @@
 int face;
 //Adds a number to keep track of which way the player is facing.
-int walk;
-//Adds a number to keep track of time walking.
+int walkL;
+int walkR;
+int walkU;
+int walkD;
+// /\ Adds a number to keep track of time walking.
+int m = millis();
 float PX;
 //Adds a number to keep track of player's X coordinates.
 float PY;
@@ -18,7 +22,10 @@ void setup() {
 
   //The following just set the things as numbers or true/false.
   face = 3;
-  walk = 1;
+  walkL = 1;
+  walkR = 1;
+  walkU = 1;
+  walkD = 1;
   PX = 330;
   PY = 230;
   SPD = 3;
@@ -37,22 +44,28 @@ void draw() {
   if (moveDown) PY += SPD;
 
   //Says that something is a name for an image.
-  PImage walkUp;
-  PImage walkLeft;
+  PImage faceUp;
+  PImage faceLeft;
+  PImage walkLeft1;
+  PImage walkLeft2;
   PImage walkRight;
   PImage walkDown;
   PImage walkUp1;
   PImage walkUp2;
   //Loads the image and attaches a name to an image(only use .tga and the image must be in the same folder as "dungon run").
-  walkUp = loadImage("Player_Up.tga");
-  walkLeft = loadImage("Player_Left.tga");
+  faceLeft = loadImage("Player_Left.tga");
+  faceUp = loadImage("Player_Up.tga");
+  walkLeft1 = loadImage("Player_Left1.tga");
+  walkLeft2 = loadImage("Player_Left2.tga");
   walkRight = loadImage("Player_Right.tga");
   walkUp1 = loadImage("Player_Up_Walk1.tga");
   walkUp2 = loadImage("Player_Up_Walk2.tga");
   walkDown = loadImage("Player_Down.tga");
   //Tells the image where to appear and which one to appear.
-  if (face == 5) {
-    image(walkLeft, PX, PY);
+  if (face == 5 && m == 1) {
+    image(faceLeft, PX, PY);
+  } else if (face == 6 && m == 2) {
+    image(faceUp, PX, PY);
   } else if (face == 6) {
     image(walkRight, PX, PY);
   } else if (face == 7) {
@@ -62,13 +75,16 @@ void draw() {
   }
   //Same as the above but for when the character is standing.
   if (face == 1 && !moveLeft) {
-    image(walkLeft, PX, PY);
+    image(faceLeft, PX, PY);
   } else if (face == 2 && !moveRight) {
     image(walkRight, PX, PY);
   } else if (face == 3 && !moveUp) {
-    image(walkUp, PX, PY);
+    image(faceUp, PX, PY);
   } else if (face == 4 && !moveDown) {
     image(walkDown, PX, PY);
+  }
+  if (m > 2) {
+    m = 1;
   }
 }
 
@@ -79,6 +95,7 @@ void keyPressed() {
     if (keyCode == LEFT) {
       moveLeft = true;
       face = 5;
+      walkL += 1;
       //Every number for face represents a different direction so it knows what image to make appear.
     } else if (keyCode == RIGHT) {
       moveRight = true;
