@@ -22,7 +22,6 @@ void draw() {
   PImage faceUp;
   PImage faceDown;
   PImage walkLeft1;
-  PImage walkLeft2;
   PImage walkRight1;
   PImage walkRight2;
   PImage walkUp1;
@@ -37,6 +36,7 @@ void draw() {
   faceDown = loadImage("Player_Down.tga");
   walkLeft1 = loadImage("Player_Left1.tga");
   walkRight1 = loadImage("Player_Right1.tga");
+  walkRight2 = loadImage("Player_Right_Walk2");
   walkUp1 = loadImage("Player_Up_Walk1.tga");
   walkUp2 = loadImage("Player_Up_Walk2.tga");
   walkDown1 = loadImage("Player_Down1.tga");
@@ -50,7 +50,7 @@ void draw() {
   if (face == 5 && m < 1) {
     image(walkLeft1, PX, PY);
   } else if (face == 5 && m > 1) {
-    image(walkRight2, PX, PY);
+    image(faceLeft, PX, PY);
   } else if (face == 6 && m < 1) {
     image(walkRight1, PX, PY);
   } else if (face == 6 && m > 1) {
