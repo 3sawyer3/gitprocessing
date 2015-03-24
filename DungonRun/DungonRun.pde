@@ -6,7 +6,7 @@ float PY;
 float SPD;
 boolean moveLeft, moveRight, moveUp, moveDown, useWeapon, useMagic, useItem, playerDead;
 
-PImage faceLeft, faceRight, faceUp, faceDown, walkLeft1, walkRight1, walkRight2, walkUp1, walkUp2, walkDown1, walkDown2, magicLeftF, magicRightF, magicUpF, magicDownF, deadPlayer1;
+PImage faceLeft, faceRight, faceUp, faceDown, walkLeft1, walkRight1, walkRight2, walkUp1, walkUp2, walkDown1, walkDown2, swordLeft, swordRight, swordUp, swordDown, magicLeftF, magicRightF, magicUpF, magicDownF, deadPlayer1;
 Slime slime;
 
 void setup() {
@@ -29,6 +29,10 @@ void setup() {
   walkUp2 = loadImage("Player_Up_Walk2.png");
   walkDown1 = loadImage("Player_Down_Walk1.tga");
   walkDown2 = loadImage("Player_Down_Walk2.tga");
+  swordLeft = loadImage("Player_Left_Sword.png");
+  swordRight = loadImage("Player_Right_Sword.png");
+  swordUp = loadImage("Player_Up_Sword.png");
+  swordDown = loadImage("Player_Down_Sword.png");
   magicLeftF = loadImage("Player_Left_Magic_Fire.png");
   magicRightF = loadImage("Player_Right_Magic_Fire.png");
   magicUpF = loadImage("Player_Up_Magic_Fire.png");
@@ -106,14 +110,34 @@ void draw() {
         image(magicDownF, PX, PY);
       }
     }
+    if (face == 1) {
+      if (useWeapon) {
+        image(swordLeft, PX, PY);
+      }
+    }
+    if (face == 2) {
+      if (useWeapon) {
+        image(swordRight, PX, PY);
+      }
+    }
+    if (face == 3) {
+      if (useWeapon) {
+        image(swordUp, PX, PY);
+      }
+    }
+    if (face == 4) {
+      if (useWeapon) {
+        image(swordDown, PX, PY);
+      }
+    }
 
-    if (face == 1 && !moveLeft && !useMagic) {
+    if (face == 1 && !moveLeft && !useMagic && !useWeapon) {
       image(faceLeft, PX, PY);
-    } else if (face == 2 && !moveRight && !useMagic) {
+    } else if (face == 2 && !moveRight && !useMagic && !useWeapon) {
       image(faceRight, PX, PY);
-    } else if (face == 3 && !moveUp && !useMagic) {
+    } else if (face == 3 && !moveUp && !useMagic && !useWeapon) {
       image(faceUp, PX, PY);
-    } else if (face == 4 && !moveDown && !useMagic) {
+    } else if (face == 4 && !moveDown && !useMagic && !useWeapon) {
       image(faceDown, PX, PY);
     }
   }
