@@ -10,9 +10,6 @@ class Magic {
     if (useMagic) {
       fireBoltTimer = millis();
     }
-    //    if (fireBoltShot) {
-    //      if (face == 1);
-    //    }
     if (useMagic) {
       if (face == 3 || face == 7) {
         if (useFirstImage) {
