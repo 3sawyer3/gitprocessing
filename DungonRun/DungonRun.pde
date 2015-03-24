@@ -61,6 +61,7 @@ void draw() {
     moveUp = false;
     moveDown = false;
   }
+
   if (!playerDead) {
     if (face == 5) {
       if (useFirstImage) {

@@ -1,11 +1,13 @@
 class Slime {
   int sHealth = 3;
+  int millisBeweenImages = 300;
+  int inble = 0;
   float SY = 330;
   float SX = 230;
   float s = 1;
   PImage slime1 = loadImage("Slime_Down.tga");
   PImage slime2 = loadImage("Slime_Down_Walk1.tga");
-  int millisBeweenImages = 300;
+  boolean hit = false;
 
   void draw() {
 
@@ -25,8 +27,20 @@ class Slime {
           SX += slimeSpd * ( slimeImageCenterX()  - SX ) / sight;
           SY += slimeSpd * ( slimeImageCenterY()  - SY ) / sight;
         }
-        if (hitBox < 50) {
+        if (hitBox < 50 && hit == false) {
           health -= 1;
+          hit = true;
+          //        }
+          //        if (hit) {
+          //          inble = second();
+          //        }
+          //        if (inble == 1) {
+          //          playerDead = true;
+          //        }
+          //        if (inble > 1) {
+          //          hit = false;
+          //          inble = 0;
+          //        }
         }
       }
     }
