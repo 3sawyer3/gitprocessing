@@ -30,17 +30,13 @@ class Slime {
         if (hitBox < 50 && hit == false) {
           health -= 1;
           hit = true;
-          //        }
-          //        if (hit) {
-          //          inble = second();
-          //        }
-          //        if (inble == 1) {
-          //          playerDead = true;
-          //        }
-          //        if (inble > 1) {
-          //          hit = false;
-          //          inble = 0;
-          //        }
+        }
+        if (hit) {
+          inble = second();
+        }
+        if (inble > 1) {
+          hit = false;
+          inble = 0;
         }
       }
     }
