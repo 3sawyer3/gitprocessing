@@ -2,7 +2,7 @@ class Slime {
   int sHealth = 3;
   float SY = 330;
   float SX = 230;
-  float s = .5;
+  float s = 1;
   PImage slime1 = loadImage("Slime_Down.tga");
   PImage slime2 = loadImage("Slime_Down_Walk1.tga");
   int millisBeweenImages = 300;
@@ -25,7 +25,7 @@ class Slime {
           SX += slimeSpd * ( slimeImageCenterX()  - SX ) / sight;
           SY += slimeSpd * ( slimeImageCenterY()  - SY ) / sight;
         }
-        if (hitBox < 70) {
+        if (hitBox < 50) {
           health -= 1;
         }
       }
