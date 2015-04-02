@@ -15,7 +15,7 @@ void setup() {
 
   PX = 330;
   PY = 230;
-  SPD = 3.5;
+  SPD = 3;
   moveLeft = moveRight = moveUp = moveDown = useWeapon = useMagic = useItem = playerDead = false;
 
   faceLeft = loadImage("Player_Left.tga");
