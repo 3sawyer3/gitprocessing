@@ -8,6 +8,7 @@ boolean moveLeft, moveRight, moveUp, moveDown, useWeapon, useMagic, useItem, pla
 
 PImage faceLeft, faceRight, faceUp, faceDown, walkLeft1, walkRight1, walkRight2, walkUp1, walkUp2, walkDown1, walkDown2, swordLeft, swordRight, swordUp, swordDown, magicLeftF, magicRightF, magicUpF, magicDownF, deadPlayer1;
 Slime slime;
+Magic magic;
 
 void setup() {
   size(700, 500);

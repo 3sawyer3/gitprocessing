@@ -30,11 +30,9 @@ class Slime {
         if (hitBox < 50 && hit == false) {
           health -= 1;
           hit = true;
+          inble = millis();
         }
-        if (hit) {
-          inble = second();
-        }
-        if (inble > 1) {
+        if (hit && millis() - inble > 500) {
           hit = false;
           inble = 0;
         }

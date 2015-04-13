@@ -3,6 +3,8 @@ class Magic {
   int fbX;
   int spellTimer;
   int millisBeweenImages = 100;
+  float MX;
+  float MY;
   boolean useFirstImage = (millis() % (millisBeweenImages * 2)) < millisBeweenImages;
   PImage fireBolt1 = loadImage("Fire_Bolt1.png");
   PImage fireBolt2 = loadImage("Fire_Bolt2.png");
@@ -13,10 +15,13 @@ class Magic {
     }
     if (useMagic) {
       if (face == 3 || face == 7) {
+        spellTimer = millis();
+        MX = PX;
+        MY = PY;
         if (useFirstImage) {
-          image(fireBolt1, spellTimer, PX);
+          image(fireBolt1, spellTimer, MX);
         } else {
-          image(fireBolt2, spellTimer, PX);
+          image(fireBolt2, spellTimer, MX);
         }
       }
     }
